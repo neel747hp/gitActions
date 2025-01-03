@@ -27,3 +27,7 @@ jobs:
               run: echo "On linux machine Machine"
 
 
+    build-mac-app:
+        runs-on: macos-latest
+        steps:
+            - run: echo "On mac Machine"
