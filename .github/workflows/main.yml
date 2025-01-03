@@ -1,1 +1,29 @@
 # new workflow
+name : A first github action workflow
+
+on:
+    push:
+        branches: ['main']
+
+    pull_request:
+        branches: ['main']
+    
+    workflow_dispatch:
+
+
+jobs:
+    build-app:
+        runs-on: windows-latest
+        steps:
+            - run: echo "On windows Machine"
+    
+    build-linux-app:
+        runs-on: ubuntu-latest
+        steps:
+            # - name: Run a checkout action
+            - uses: actions/checkout@v3
+
+            - name: Run a line script
+              run: echo "On linux machine Machine"
+
+
